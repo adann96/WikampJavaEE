@@ -12,6 +12,12 @@ public class LecturerLogin extends HttpServlet {
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
+        try {
+
+        }
+        catch (NullPointerException ex) {
+            System.out.println(ex.getMessage());
+        }
     }
 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
