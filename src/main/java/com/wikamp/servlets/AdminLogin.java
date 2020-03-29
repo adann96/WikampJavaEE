@@ -1,6 +1,8 @@
 package com.wikamp.servlets;
 
+import com.wikamp.charts.Faculty;
 import com.wikamp.dao.AdminDAO;
+import com.wikamp.dao.FacultyDAO;
 import com.wikamp.dao.LecturerDAO;
 import com.wikamp.users.Admin;
 import com.wikamp.users.Lecturer;
@@ -13,14 +15,27 @@ import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.sql.SQLException;
+import java.util.ArrayList;
 
 @WebServlet("/AdminLogin")
 public class AdminLogin extends HttpServlet {
     private AdminDAO adminDAO;
+    private FacultyDAO facultyDAO;
     private Admin admin;
+    private Faculty faculty;
 
     private int adminNo;
     private String passwordAcc;
+
+    public void init() {
+        facultyDAO = new FacultyDAO();
+    }
+
+    private void facultyList(HttpServletRequest request, HttpServletResponse response) throws SQLException, IOException, ServletException {
+        HttpSession httpSession = request.getSession();
+        ArrayList<Faculty> facultyList = facultyDAO.getFaculties();
+        httpSession.setAttribute("facultyList", facultyList);
+    }
 
     protected void doPost(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
         doGet(request,response);
@@ -34,6 +49,14 @@ public class AdminLogin extends HttpServlet {
             if (admin!=null && (admin.getADMIN_ID()>1 && admin.getPASSWORD_ACC()!=null)) {
                 HttpSession httpSession = request.getSession();
                 httpSession.setAttribute("adminNo",adminNo);
+
+                try {
+                    facultyList(request,response);
+                }
+                catch (SQLException e) {
+                    e.printStackTrace();
+                }
+
                 response.sendRedirect("AdminDashboard.jsp?adminNo="+adminNo);
             }
             else {

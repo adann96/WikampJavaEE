@@ -1,16 +1,36 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: admin
-  Date: 29/03/2020
-  Time: 13:58
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page contentType="text/html;charset=UTF-8" language="java" isELIgnored="false"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
 <html>
 <head>
     <title>Title</title>
 </head>
 <body>
-<h1>Admin Dashboard</h1>
+
+<table>
+    <thead>
+    <tr>
+        <th>Wydział</th>
+        <th>Liczba Studentów</th>
+    </tr>
+    </thead>
+    <tbody>
+    <c:forEach var="fac" items="${facultyList}">
+        <tr>
+            <td>
+                <c:out value="${fac.facultyName}" />
+            </td>
+            <td>
+                <c:out value="${fac.studentsNo}" />
+            </td>
+        </tr>
+    </c:forEach>
+    </tbody>
+</table>
+
+<div id="piechart" style="width: 1200px; height: 500px;"></div>
+
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.4.1/jquery.min.js"></script>
+<script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+<script src="javascript/FacultyPieChart.js"></script>
 </html>
