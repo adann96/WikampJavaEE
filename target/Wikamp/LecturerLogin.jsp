@@ -28,8 +28,8 @@
                 <img src="photos/teacher_school_student_professor_produce_organic_male-512.png" class="icon" alt="User Icon" />
             </div>
             <form action="LecturerLogin" method="POST">
-                <input type="text" class="fadeIn fourth" required autofocus></br>
-                <input type="password" class="fadeIn fourth" required></br>
+                <input type="text" name="lecturerNo" class="fadeIn fourth" required autofocus></br>
+                <input type="password" name="passAcc" class="fadeIn fourth" required></br>
                 <input type="submit" class="fadeIn fourth" value="Log In">
             </form>
         </div>
