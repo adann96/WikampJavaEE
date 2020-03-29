@@ -1,0 +1,14 @@
+com\wikamp\users\Admin.class
+com\wikamp\servlets\StudentLogin.class
+com\wikamp\charts\StudentChartDAO.class
+com\wikamp\charts\Student.class
+com\wikamp\dao\AdminDAO.class
+com\wikamp\StudentList.class
+com\wikamp\oracle\ConnectionProvider.class
+com\wikamp\oracle\Provider.class
+com\wikamp\servlets\AdminLogin.class
+com\wikamp\servlets\LecturerLogin.class
+com\wikamp\dao\StudentDAO.class
+com\wikamp\users\Student.class
+com\wikamp\dao\LecturerDAO.class
+com\wikamp\users\Lecturer.class
