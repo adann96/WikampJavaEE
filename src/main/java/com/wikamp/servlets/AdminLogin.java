@@ -1,5 +1,6 @@
 package com.wikamp.servlets;
 
+import com.google.gson.Gson;
 import com.wikamp.charts.Faculty;
 import com.wikamp.dao.AdminDAO;
 import com.wikamp.dao.FacultyDAO;
@@ -23,6 +24,7 @@ public class AdminLogin extends HttpServlet {
     private FacultyDAO facultyDAO;
     private Admin admin;
     private Faculty faculty;
+    private String json;
 
     private int adminNo;
     private String passwordAcc;

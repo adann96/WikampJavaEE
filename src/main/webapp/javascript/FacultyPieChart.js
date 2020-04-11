@@ -3,6 +3,7 @@ $(document).ready(function(){
     google.charts.setOnLoadCallback(drawChart);
 
     var facultyStats = [];
+    console.log(facultyStats)
 
     var table = document.getElementsByTagName("table")[0];
     table.bgColor = "Yellow";
@@ -12,18 +13,16 @@ $(document).ready(function(){
     for (var i = 0; i < td.length; i++) {
         if (i % 2 == 0) {
             facultyStats[i] = td[i].innerHTML.trim();
-            td[i].style.background = "LightBlue";
         }
         else {
             facultyStats[i] = td[i];
-            td[i].style.background = "Orange";
         }
     }
 
     function drawChart() {
 
         var data = google.visualization.arrayToDataTable([
-            ['Task', 'Hours per Day'],
+            ['Faculty', 'Number of students'],
             [facultyStats[0].toString(), parseInt(facultyStats[1].innerHTML.trim(), 10)],
             [facultyStats[2].toString(), parseInt(facultyStats[3].innerHTML.trim(), 10)],
             [facultyStats[4].toString(), parseInt(facultyStats[5].innerHTML.trim(), 10)],
@@ -35,7 +34,14 @@ $(document).ready(function(){
         ]);
 
         var options = {
-            title: 'Number of students per faculty (in %)'
+            title: 'Number of students per faculty (in %)',
+            backgroundColor: '#e5e8ec',
+            chartArea:{
+                right: 70,
+                left: 70,
+                width: '100%',
+                height: '75%',
+            }
         };
 
         var chart = new google.visualization.PieChart(document.getElementById('piechart'));
