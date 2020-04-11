@@ -27,12 +27,12 @@
 </nav>
 <div class=".container-fluid">
     <div class="row">
-        <div class="m-5 col">
+        <div class="p-0 m-5 col">
             <h3>Column 1</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
         </div>
-        <div class="m-5 col-7">
+        <div class="p-0 m-5 col-7">
             <div id="menuToggle">
                 <nav class="navbar navbar-expand-sm bg-dark navbar-dark">
                     <ul class="navbar-nav">
@@ -69,7 +69,7 @@
             </div>
             <div id="piechart" style="width: 100%; height: 500px;"></div>
         </div>
-        <div class="m-5 col">
+        <div class="p-0 m-5 col">
             <h3>Column 3</h3>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit...</p>
             <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris...</p>
