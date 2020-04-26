@@ -1,9 +1,7 @@
 package com.wikamp.servlets;
 
 import com.wikamp.dao.LecturerDAO;
-import com.wikamp.dao.StudentDAO;
 import com.wikamp.users.Lecturer;
-import com.wikamp.users.Student;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -38,7 +36,7 @@ public class LecturerLogin extends HttpServlet {
                 response.sendRedirect("LecturerDashboard.jsp?lecturerNo="+lecturerNo);
             }
             else {
-                response.sendRedirect("None");
+                response.sendRedirect("LecturerLogin.jsp");
             }
         }
         catch (NullPointerException | SQLException ex) {

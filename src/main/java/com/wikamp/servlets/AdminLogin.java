@@ -1,12 +1,9 @@
 package com.wikamp.servlets;
 
-import com.google.gson.Gson;
 import com.wikamp.charts.Faculty;
 import com.wikamp.dao.AdminDAO;
 import com.wikamp.dao.FacultyDAO;
-import com.wikamp.dao.LecturerDAO;
 import com.wikamp.users.Admin;
-import com.wikamp.users.Lecturer;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -62,7 +59,7 @@ public class AdminLogin extends HttpServlet {
                 response.sendRedirect("AdminDashboard.jsp?adminNo="+adminNo);
             }
             else {
-                response.sendRedirect("None");
+                response.sendRedirect("AdminLogin.jsp");
             }
         }
         catch (NullPointerException | SQLException ex) {

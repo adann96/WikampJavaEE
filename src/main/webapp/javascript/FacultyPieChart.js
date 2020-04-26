@@ -34,17 +34,14 @@ $(document).ready(function(){
         ]);
 
         var options = {
-            title: 'Number of students per faculty (in %)',
             backgroundColor: '#e5e8ec',
             chartArea:{
-                right: 70,
-                left: 70,
-                width: '100%',
-                height: '75%',
-            }
+                width: '80%',
+                height: '80%'
+            },
         };
 
-        var chart = new google.visualization.PieChart(document.getElementById('piechart'));
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
 
         chart.draw(data, options);
     }

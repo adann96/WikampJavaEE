@@ -36,7 +36,7 @@ public class StudentLogin extends HttpServlet {
                 response.sendRedirect("StudentDashboard.jsp?indexNo="+indexNo);
             }
             else {
-                response.sendRedirect("None");
+                response.sendRedirect("StudentLogin.jsp");
             }
         }
         catch (NullPointerException | SQLException ex) {
